@@ -1,0 +1,164 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  height: 3rem;
+  width: 50vw;
+  border-radius: 30px;
+  padding-left: 35px;
+  border: 2px solid gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #888;
+}
+.logos {
+  display: flex;
+  align-items: end;
+  gap: 15px;
+  margin-left: auto;
+  margin-right: 4rem;
+}
+.logos > * {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  width: 4rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.fa-gear {
+  position: relative;
+  cursor: pointer;
+}
+.fa-gear:hover::after {
+  content: "Settings";
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #333;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Profile Picture and Dropdown Styles */
+.profile-container {
+  position: relative;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  border-color: #3c86f0;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  min-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.dropdown-user-info {
+  display: flex;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.dropdown-user-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.dropdown-user-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 0;
+}
+
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.profile-dropdown button:hover {
+  background-color: #f5f5f5;
+}
+
+.profile-dropdown button:last-child {
+  color: #e53935;
+}
