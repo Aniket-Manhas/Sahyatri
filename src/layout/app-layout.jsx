@@ -8,6 +8,26 @@ const AppLayout = () => {
   const { user, setUser } = useContext(UserContext);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+  }, []);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    const container = document.querySelector(".container");
+    const buttons = document.querySelectorAll(".button");
+    if (savedDarkMode) {
+      container.classList.add("dark-mode");
+      buttons.forEach((button) => button.classList.add("dark-mode-button"));
+    } else {
+      container.classList.remove("dark-mode");
+      buttons.forEach((button) => button.classList.remove("dark-mode-button"));
+    }
+  }, []);
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -39,15 +59,17 @@ const AppLayout = () => {
     <div>
       <div className="container">
         <div className="search-container">
-          <input
-            type="text"
-            className="form-control search-input"
-            placeholder="Search..."
-          />
-          <i className="fas fa-search search-icon"></i>
+          <div className="search-wrapper">
+            <input
+              type="text"
+              className="form-control search-input"
+              placeholder="Search..."
+            />
+            <i className="fas fa-search search-icon"></i>
+          </div>
         </div>
         <div className="logos">
-          <i 
+          <i
             className="fa-solid fa-home"
             onClick={() => navigate("/")}
             style={{ cursor: "pointer" }}

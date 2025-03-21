@@ -24,6 +24,13 @@ const RoutePlanner = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+  }, []);
+
+  useEffect(() => {
     if (!mapContainerRef.current || mapInstanceRef.current) return;
 
     const initializeMap = async () => {

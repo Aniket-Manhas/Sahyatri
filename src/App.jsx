@@ -13,6 +13,7 @@ import RoutePlanner from "./pages/RoutePlanner";
 import Help from "./pages/help";
 import Login from "./pages/login";
 import Settings from "./pages/settings";
+import ChatBot from "./component/ChatBot";
 
 // Create a context for user data
 export const UserContext = createContext(null);
@@ -23,9 +24,17 @@ const GOOGLE_CLIENT_ID =
 function App() {
   const [user, setUser] = useState(null);
 
+  // Create a layout component that includes both AppLayout and ChatBot
+  const LayoutWithChatBot = () => (
+    <>
+      <AppLayout />
+      <ChatBot />
+    </>
+  );
+
   const router = createBrowserRouter([
     {
-      element: <AppLayout />,
+      element: <LayoutWithChatBot />,
       children: [
         {
           path: "/",

@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styling/landing.css";
 import LandingMap from "../component/station.png";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedDarkMode);
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+      document.querySelectorAll(".grid-item span").forEach((span) => {
+        span.style.color = "white";
+      });
+    }
+  }, []);
 
   // Navigation items for the grid
   const navItems = [
-    { name: "Home", icon: "fa-solid fa-home", path: "/" },
     { name: "Platform", icon: "fa-solid fa-ticket", path: "/platform" },
     { name: "Book a Ride", icon: "fa-solid fa-book", path: "/book-ride" },
     { name: "Live Maps", icon: "fa-solid fa-map-location-dot", path: "/map" },

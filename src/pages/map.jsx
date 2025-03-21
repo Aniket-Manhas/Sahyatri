@@ -12,6 +12,15 @@ const Map = () => {
   const [mapStyle, setMapStyle] = useState("streets");
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedDarkMode);
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+  }, []);
 
   useEffect(() => {
     if (!mapRef.current) return;

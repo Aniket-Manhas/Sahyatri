@@ -52,7 +52,7 @@
 .grid-item i {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #2196F3;
+  color: #2196f3;
 }
 
 .grid-item span {
@@ -63,7 +63,7 @@
 .landing-info-section {
   flex: 1;
   min-width: 45%;
-  background-color: #2196F3;
+  background-color: #2196f3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +82,7 @@
 }
 
 .station-map h3 {
-  color: #2196F3;
+  color: #2196f3;
   margin-bottom: 1rem;
   text-align: center;
   font-size: 1.3rem;
@@ -124,7 +124,7 @@
 }
 
 .info-box h2 {
-  color: #2196F3;
+  color: #2196f3;
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: 2rem;
@@ -158,7 +158,7 @@
 
 .info-box .info-button {
   display: block;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -171,7 +171,7 @@
 }
 
 .info-button:hover {
-  background-color: #1976D2;
+  background-color: #1976d2;
 }
 
 /* Responsive adjustments */
@@ -180,7 +180,7 @@
   .landing-info-section {
     min-width: 100%;
   }
-  
+
   .info-box ul {
     columns: 1;
   }
@@ -196,4 +196,46 @@
   .nav-grid {
     grid-template-columns: 1fr;
   }
-} 
+}
+
+body.dark-mode .landing-wrapper {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .landing-grid-section,
+body.dark-mode .landing-info-section {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .landing-grid-section h2,
+body.dark-mode .landing-info-section h3,
+body.dark-mode .info-box h2,
+body.dark-mode .info-box p,
+body.dark-mode .info-box ul li {
+  color: #ffffff;
+}
+
+body.dark-mode .grid-item {
+  background-color: #333;
+}
+
+body.dark-mode .grid-item:hover {
+  background-color: #444;
+}
+
+body.dark-mode .station-map {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .info-box {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .info-button {
+  background-color: #444;
+}
+
+body.dark-mode .info-button:hover {
+  background-color: #555;
+}

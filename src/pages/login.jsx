@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,15 @@ import "../styling/login.css";
 const Login = () => {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedDarkMode);
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+  }, []);
 
   return (
     <div className="login-container">
@@ -25,7 +34,7 @@ const Login = () => {
                 name: userData.name,
                 email: userData.email,
                 picture: userData.picture,
-                sub: userData.sub
+                sub: userData.sub,
               });
 
               // Display the user info on the page
@@ -38,7 +47,7 @@ const Login = () => {
 
               // Navigate to home page after a short delay
               setTimeout(() => {
-                navigate('/');
+                navigate("/");
               }, 1500);
             }}
             onError={() => {
