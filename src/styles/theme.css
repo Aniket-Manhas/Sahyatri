@@ -1,0 +1,45 @@
+:root {
+  /* Light theme variables */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-text-primary: #333333;
+  --color-text-secondary: #6c757d;
+  --color-accent-primary: #3e64ff;
+  --color-accent-secondary: #b4c4ff;
+  --color-border: #e1e1e1;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Map specific colors - light */
+  --color-map-land: #f2f2f2;
+  --color-map-water: #aadaff;
+  --color-map-roads: #ffffff;
+  --color-map-buildings: #d9d0c9;
+  --color-map-station: #e74c3c;
+  --color-map-route: #3e64ff;
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables */
+  --color-bg-primary: #121212;
+  --color-bg-secondary: #1e1e1e;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0a0;
+  --color-accent-primary: #5b8aff;
+  --color-accent-secondary: #2c4380;
+  --color-border: #2d2d2d;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Map specific colors - dark */
+  --color-map-land: #1a1a1a;
+  --color-map-water: #193952;
+  --color-map-roads: #2d2d2d;
+  --color-map-buildings: #333333;
+  --color-map-station: #ff6b6b;
+  --color-map-route: #5b8aff;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
