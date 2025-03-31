@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import logo from "./logo.png";
 export default function Home() {
   const { currentUser } = useAuth();
 
