@@ -96,7 +96,7 @@ export default function Login() {
         <button
           onClick={handleGoogleLogin}
           disabled={loading}
-          className="w-full py-2 px-4 border border-border rounded bg-white text-text-primary flex items-center justify-center hover:bg-bg-secondary transition duration-200"
+          className="w-full py-2 px-4 border border-border rounded bg-white text-text-primary flex items-center justify-center dark:bg-bg-secondary transition duration-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

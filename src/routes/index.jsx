@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
+import AdminRoute from './AdminRoute';
 import Layout from '../components/layout/Layout';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import PNRStatusChecker from '../components/pnr/PNRStatusChecker';
@@ -16,6 +17,8 @@ const TrainBooking = lazy(() => import('../pages/booking/TrainBooking'));
 const TransportBooking = lazy(() => import('../pages/booking/TransportBooking'));
 const PnrStatus = lazy(() => import('../pages/pnr/PnrStatus'));
 const VoiceAssistantPage = lazy(() => import('../pages/assistant/VoiceAssistantPage'));
+const AdminDashboard = lazy(() => import('../pages/admin/Dashboard'));
+const MapEditor = lazy(() => import('../pages/admin/MapEditor'));
 
 const router = createBrowserRouter([
   {
@@ -109,6 +112,26 @@ const router = createBrowserRouter([
             <ProtectedRoute>
               <VoiceAssistantPage />
             </ProtectedRoute>
+          </Suspense>
+        ),
+      },
+      {
+        path: 'admin',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          </Suspense>
+        ),
+      },
+      {
+        path: 'admin/map-editor',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute>
+              <MapEditor />
+            </AdminRoute>
           </Suspense>
         ),
       }
