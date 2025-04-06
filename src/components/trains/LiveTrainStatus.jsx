@@ -43,9 +43,9 @@ export default function LiveTrainStatus() {
           </div>
           
           <div>
-            <label htmlFor="date" className="block mb-2 font-medium">Date</label>
+            <label htmlFor="trainDate" className="block mb-2 font-medium">Date</label>
             <input
-              id="date"
+              id="trainDate"
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}

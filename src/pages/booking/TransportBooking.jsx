@@ -29,10 +29,10 @@ export default function TransportBooking() {
             </div>
             
             <div>
-              <label htmlFor="date" className="block mb-2 font-medium text-text-primary">Date</label>
+              <label htmlFor="transportDate" className="block mb-2 font-medium text-text-primary">Date</label>
               <input 
                 type="date" 
-                id="date"
+                id="transportDate"
                 className="w-full p-3 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent-primary bg-bg-primary text-text-primary"
               />
             </div>
